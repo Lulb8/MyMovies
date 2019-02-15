@@ -76,7 +76,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
             }
         });
 
-        holder.txtFooter.setText("Footer: " + name); //TODO mettre la desciption
+        //holder.image.setImage...  //TODO mettre l'image
+        final String synopsis = currentMovie.getSynopsis();
+        holder.txtFooter.setText(synopsis); //TODO mettre la desciption
     }
 
     @Override
