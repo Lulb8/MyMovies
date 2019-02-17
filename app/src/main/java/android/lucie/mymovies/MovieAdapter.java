@@ -69,10 +69,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         Movie currentMovie = listValues.get(position);
         final String name = currentMovie.getName();   //TODO faire pour les autres
         holder.txtHeader.setText(name);
+
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);   //TODO afficher le detail
+                notifyItemRemoved(position);
+                //remove(position);   //TODO afficher le detail
             }
         });
 
@@ -86,4 +88,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         return listValues.size();
     }
 
+    /*
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private ImageView poster;
+        private TextView synopsis;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            poster = (ImageView) itemView.findViewById(R.id.poster);
+            synopsis = (TextView) itemView.findViewById(R.id.synopsis);
+        }
+    }*/
 }
