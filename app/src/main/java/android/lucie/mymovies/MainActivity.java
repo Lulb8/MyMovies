@@ -3,6 +3,7 @@ package android.lucie.mymovies;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import android.content.SharedPreferences;
 import android.lucie.mymovies.model.Movie;
 
 import android.app.Activity;
@@ -13,6 +14,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,12 @@ public class MainActivity extends Activity {
 
     private MainController controller;
 
+    private static final String PREFS = "PREFS";
+    private static final String PREFS_AGE = "PREFS_AGE";
+    private static final String PREFS_NAME = "PREFS_NAME";
+    SharedPreferences sharedPreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,8 @@ public class MainActivity extends Activity {
 
         controller = new MainController(this);
         controller.onStart();
+
+        sharedPreferences();
     }
 
     public void showList(List<Movie> input){
@@ -49,5 +59,29 @@ public class MainActivity extends Activity {
         // define an adapter
         mAdapter = new MovieAdapter(input);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    public void sharedPreferences(){
+        sharedPreferences = getBaseContext().getSharedPreferences(PREFS, MODE_PRIVATE);
+
+        //objectif : sauvegarder 1 seule fois le nom et l'age de l'utilisateur
+
+        //pour cela, on commence par regarder si on a déjà des éléments sauvegardés
+        if (sharedPreferences.contains(PREFS_AGE) && sharedPreferences.contains(PREFS_NAME)) {
+
+            int age = sharedPreferences.getInt(PREFS_AGE, 0);
+            String name = sharedPreferences.getString(PREFS_NAME, null);
+
+            Toast.makeText(this, "Age: " + age + " name: " + name, Toast.LENGTH_SHORT).show();
+
+        } else {
+            sharedPreferences
+                    .edit()
+                    .putInt(PREFS_AGE, 20)
+                    .putString(PREFS_NAME, "moi")
+                    .apply();
+
+            Toast.makeText(this, "Sauvegardé, relancez l'application pour voir le résultat", Toast.LENGTH_SHORT).show();
+        }
     }
 }

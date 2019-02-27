@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface RestMovieApi {
 
-    @GET("pokemon")
+    @GET("plot")
     Call<RestMovieResponse> getListMovie();
 }
