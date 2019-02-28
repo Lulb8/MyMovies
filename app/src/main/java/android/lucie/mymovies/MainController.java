@@ -36,8 +36,7 @@ public class MainController {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                //.baseUrl("https://pokeapi.co/api/v2/")
-                .baseUrl("http://www.omdbapi.com/?apikey=531a0d1\n&\n")
+                .baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
