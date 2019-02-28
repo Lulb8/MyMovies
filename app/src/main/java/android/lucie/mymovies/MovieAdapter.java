@@ -70,17 +70,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         final String name = currentMovie.getName();   //TODO faire pour les autres
         holder.txtHeader.setText(name);
 
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+        //TODO afficher le detail
+        holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                notifyItemRemoved(position);
-                //remove(position);   //TODO afficher le detail
+                remove(position);
             }
         });
 
         //holder.image.setImage...  //TODO mettre l'image
         final String synopsis = currentMovie.getSynopsis();
         holder.txtFooter.setText(synopsis); //TODO mettre la desciption
+        holder.txtFooter.setText("Synopsis : " + synopsis);
     }
 
     @Override
