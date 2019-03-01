@@ -7,7 +7,11 @@ import retrofit2.http.GET;
 
 public interface RestMovieApi {
 
-    @GET("pokemon")
+    /*
+    @GET("pokemon/?offset=0&limit=964")
     Call<RestMovieResponse> getListMovie();
+    */
 
+    @GET("films")
+    Call<RestMovieResponse> getListMovie();
 }
