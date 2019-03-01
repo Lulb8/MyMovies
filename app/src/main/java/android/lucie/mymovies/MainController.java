@@ -37,7 +37,6 @@ public class MainController {
 
         Retrofit retrofit = new Retrofit.Builder()
                 //.baseUrl("https://pokeapi.co/api/v2/")
-                //.baseUrl("https://restcountries.eu/rest/v2/")
                 .baseUrl("https://swapi.co/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
