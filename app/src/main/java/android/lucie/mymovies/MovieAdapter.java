@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
     private List<Movie> listValues;
@@ -71,17 +72,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         holder.txtHeader.setText(name);
 
         //TODO afficher le detail
-        holder.txtHeader.setOnClickListener(new OnClickListener() {
+        /*holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(position);
             }
-        });
+        });*/
 
         //holder.image.setImage...  //TODO mettre l'image
         final String synopsis = currentMovie.getSynopsis();
         holder.txtFooter.setText(synopsis); //TODO mettre la desciption
         holder.txtFooter.setText("Synopsis : " + synopsis);
+
     }
 
     @Override

@@ -84,4 +84,11 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "Sauvegardé, relancez l'application pour voir le résultat", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void toastMe(View view){
+        // Toast myToast = Toast.makeText(this, message, duration);
+        Toast myToast = Toast.makeText(this, "Hello Toast!",
+                Toast.LENGTH_SHORT);
+        myToast.show();
+    }
 }

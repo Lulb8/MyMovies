@@ -36,7 +36,6 @@ public class MainController {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                //.baseUrl("https://pokeapi.co/api/v2/")
                 .baseUrl("https://swapi.co/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
@@ -49,7 +48,6 @@ public class MainController {
             public void onResponse(Call<RestMovieResponse> call, Response<RestMovieResponse> response) {
                 RestMovieResponse restMovieResponse = response.body();
                 List<Movie> listMovie = restMovieResponse.getResults();
-                System.out.print("RESULT: " + listMovie.get(0));
                 activity.showList(listMovie);
             }
 
