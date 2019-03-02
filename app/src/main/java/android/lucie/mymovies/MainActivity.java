@@ -3,6 +3,7 @@ package android.lucie.mymovies;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.lucie.mymovies.model.Movie;
 
@@ -14,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -90,5 +92,17 @@ public class MainActivity extends Activity {
         Toast myToast = Toast.makeText(this, "Hello Toast!",
                 Toast.LENGTH_SHORT);
         myToast.show();
+    }
+
+    public void details (View view) {
+        // Create an Intent to start the second activity
+        Intent intent = new Intent(this, SecondActivity.class);
+        // Get the text view that shows the detail.
+        TextView showTextView = (TextView) findViewById(R.id.name);
+        // Get the value of the text view.
+        String str = showTextView.getText().toString();
+        intent.putExtra("showTextView", str);
+        // Start the new activity.
+        startActivity(intent);
     }
 }

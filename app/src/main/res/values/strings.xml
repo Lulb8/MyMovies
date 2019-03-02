@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Movies</string>
+    <string name="birth_year">birth_year</string>
+    <string name="homeworld">homeworld</string>
+    <string name="name">name</string>
+    <string name="gender">gender</string>
+    <string name="starships">starships</string>
+    <string name="films">films</string>
+    <string name="url">url</string>
 </resources>
