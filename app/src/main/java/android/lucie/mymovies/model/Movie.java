@@ -2,7 +2,7 @@ package android.lucie.mymovies.model;
 
 public class Movie {
     private String name;
-    private String synopsis;
+    private String gender;
     private String url;
 
     public String getName() {
@@ -13,12 +13,12 @@ public class Movie {
         this.name = name;
     }
 
-    public String getSynopsis() {
-        return synopsis;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getUrl() {

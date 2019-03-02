@@ -6,8 +6,10 @@ import com.google.gson.GsonBuilder;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.lucie.mymovies.model.Movie;
+import android.lucie.mymovies.model.Movie;
 
 import android.app.Activity;
+import android.lucie.mymovies.model.Movie;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -40,6 +42,9 @@ public class MainActivity extends Activity {
     private static final String PREFS_NAME = "PREFS_NAME";
     SharedPreferences sharedPreferences;
 
+    private static final String NAME = "showTextView";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +67,7 @@ public class MainActivity extends Activity {
         mAdapter = new MovieAdapter(input);
         recyclerView.setAdapter(mAdapter);
     }
+
 
     public void sharedPreferences(){
         sharedPreferences = getBaseContext().getSharedPreferences(PREFS, MODE_PRIVATE);
@@ -94,15 +100,13 @@ public class MainActivity extends Activity {
         myToast.show();
     }
 
-    public void details (View view) {
-        // Create an Intent to start the second activity
-        Intent intent = new Intent(this, SecondActivity.class);
-        // Get the text view that shows the detail.
+    /*
+    public void onClickDetails (View view) {
+        Intent intent = new Intent(this, Main2Activity.class);
         TextView showTextView = (TextView) findViewById(R.id.name);
-        // Get the value of the text view.
         String str = showTextView.getText().toString();
-        intent.putExtra("showTextView", str);
-        // Start the new activity.
+        intent.putExtra(NAME, str);
         startActivity(intent);
     }
+    */
 }

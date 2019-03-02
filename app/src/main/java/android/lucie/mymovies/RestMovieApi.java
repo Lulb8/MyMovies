@@ -12,7 +12,7 @@ public interface RestMovieApi {
     Call<RestMovieResponse> getListMovie();
 */
 
-    @GET("people")
+    @GET("people")  /*page 1 à 9*/
     Call<RestMovieResponse> getListMovie();
 
 }
