@@ -8,6 +8,7 @@ import android.lucie.mymovies.model.Movie;
 import android.lucie.mymovies.model.RestMovieResponse;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,11 +21,13 @@ public class MainController {
 
     private MainActivity activity;
 
+    private RestMovieApi restMovieApi;
+
     public MainController(MainActivity mainActivity) {
         this.activity = mainActivity;
     }
 
-    public void onStart(){
+    public void onStart() {
 
         //Pour ceux qui veulent aller plus loin
         //Singleton
@@ -40,8 +43,17 @@ public class MainController {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        RestMovieApi restMovieApi = retrofit.create(RestMovieApi.class);
+        restMovieApi = retrofit.create(RestMovieApi.class);
 
+        if (hasDataInDataBase()) {
+            List<Movie> peopleList = getListFromDataBase();
+            activity.showList(peopleList);
+        } else {
+            makeApiCall();
+        }
+    }
+
+    private void makeApiCall() {
         Call<RestMovieResponse> call = restMovieApi.getListMovie();
         call.enqueue(new Callback<RestMovieResponse>() {
             @Override
@@ -57,4 +69,20 @@ public class MainController {
             }
         });
     }
+
+    private void storeData(List<Movie> listPokemon) {
+        //TODO
+    }
+
+    private List<Movie> getListFromDataBase() {
+        //TODO Implement With real logic
+        return new ArrayList<>();
+    }
+
+    private boolean hasDataInDataBase() {
+        //TODO Implement With real logic
+        return true;
+    }
+
+
 }

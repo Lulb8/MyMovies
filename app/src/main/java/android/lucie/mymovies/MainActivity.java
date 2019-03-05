@@ -54,8 +54,6 @@ public class MainActivity extends Activity {
 
         controller = new MainController(this);
         controller.onStart();
-
-        sharedPreferences();
     }
 
     public void showList(List<Movie> input){
@@ -66,38 +64,6 @@ public class MainActivity extends Activity {
         // define an adapter
         mAdapter = new MovieAdapter(input);
         recyclerView.setAdapter(mAdapter);
-    }
-
-
-    public void sharedPreferences(){
-        sharedPreferences = getBaseContext().getSharedPreferences(PREFS, MODE_PRIVATE);
-
-        //objectif : sauvegarder 1 seule fois le nom et l'age de l'utilisateur
-
-        //pour cela, on commence par regarder si on a déjà des éléments sauvegardés
-        if (sharedPreferences.contains(PREFS_AGE) && sharedPreferences.contains(PREFS_NAME)) {
-
-            int age = sharedPreferences.getInt(PREFS_AGE, 0);
-            String name = sharedPreferences.getString(PREFS_NAME, null);
-
-            Toast.makeText(this, "Age: " + age + " name: " + name, Toast.LENGTH_SHORT).show();
-
-        } else {
-            sharedPreferences
-                    .edit()
-                    .putInt(PREFS_AGE, 20)
-                    .putString(PREFS_NAME, "moi")
-                    .apply();
-
-            Toast.makeText(this, "Sauvegardé, relancez l'application pour voir le résultat", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void toastMe(View view){
-        // Toast myToast = Toast.makeText(this, message, duration);
-        Toast myToast = Toast.makeText(this, "Hello Toast!",
-                Toast.LENGTH_SHORT);
-        myToast.show();
     }
 
     /*
