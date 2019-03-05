@@ -21,11 +21,6 @@ public class MainActivity extends Activity {
 
     private MainController controller;
 
-    private static final String PREFS = "PREFS";
-    private static final String PREFS_AGE = "PREFS_AGE";
-    private static final String PREFS_NAME = "PREFS_NAME";
-    SharedPreferences sharedPreferences;
-
     private static final String NAME = "showTextView";
 
     @Override
