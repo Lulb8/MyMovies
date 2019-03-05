@@ -72,7 +72,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);
+                //remove(position);
             }
         });
 
@@ -80,6 +80,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         final String gender = currentMovie.getGender();
         holder.txtFooter.setText(gender);*/ //TODO mettre la description
     }
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override

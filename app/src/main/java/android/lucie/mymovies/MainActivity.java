@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
         recyclerView.setAdapter(mAdapter);
     }
 
-    /*
+
     public void onClickDetails (View view) {
         Intent intent = new Intent(this, Main2Activity.class);
         TextView showTextView = (TextView) findViewById(R.id.name);
@@ -74,5 +74,4 @@ public class MainActivity extends Activity {
         intent.putExtra(NAME, str);
         startActivity(intent);
     }
-    */
 }

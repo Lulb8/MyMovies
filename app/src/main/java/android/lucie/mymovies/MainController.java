@@ -70,7 +70,7 @@ public class MainController {
         });
     }
 
-    private void storeData(List<Movie> listPokemon) {
+    private void storeData(List<Movie> listMovie) {
         //TODO
     }
 
