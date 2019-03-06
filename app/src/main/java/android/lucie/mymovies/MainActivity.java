@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class MainActivity extends Activity {
 
     private MainController controller;
 
-    private static final String NAME = "showTextView";
+    public static final String NAME = "showTextView";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class MainActivity extends Activity {
         recyclerView.setAdapter(mAdapter);
     }
 
+    /*
     public void onClickDetails (View view) {
         Intent intent = new Intent(this, Main2Activity.class);
         TextView showTextView = (TextView) findViewById(R.id.name);
@@ -50,5 +52,13 @@ public class MainActivity extends Activity {
         intent.putExtra(NAME, str);
         startActivity(intent);
     }
+    */
 
+    public void displayToast (String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showToast (View view) {
+        displayToast(getString(R.string.name));
+    }
 }

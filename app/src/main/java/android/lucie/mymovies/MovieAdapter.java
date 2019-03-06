@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
     private List<Movie> listValues;
 
-    public class CelluleJava extends RecyclerView.ViewHolder {
+    public class CelluleJava extends RecyclerView.ViewHolder implements View.OnClickListener{
         // each data item is just a string in this case
         public TextView txtHeader;
         public TextView txtFooter;
@@ -29,6 +29,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.title);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            // Get the position of the item that was clicked.
+            int mPosition = getLayoutPosition();
+            // Use that to access the affected item in mWordList.
+            String element = txtHeader.get(mPosition);
+            // Change the word in the mWordList.
+            txtHeader.set(mPosition, "Clicked! " + element);
+            // Notify the adapter, that the data has changed so it can
+            // update the RecyclerView to display the data.
+            txtHeader.notifyDataSetChanged();
         }
     }
 

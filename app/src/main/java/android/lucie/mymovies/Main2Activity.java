@@ -1,6 +1,7 @@
 package android.lucie.mymovies;
 
 import android.content.Intent;
+import android.lucie.mymovies.model.Movie;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -8,14 +9,22 @@ import android.widget.TextView;
 public class Main2Activity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
+    private TextView peopleName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        showName();
+
+        /*
+        peopleName = findViewById(R.id.name);
+        Movie movie = (Movie) getIntent().getSerializableExtra(MainActivity.NAME);
+*/
+        //loadDetails(movie);
+        //showName();
     }
 
+    /*
     public void showName () {
         Intent intent = getIntent();
         // Get the text view where the name will be displayed
@@ -28,7 +37,7 @@ public class Main2Activity extends AppCompatActivity {
         // Display the name.
         textView.setText(text);
 
-        /*
+
         Intent intent = getIntent();
         if (intent != null) {
             String str = "";
@@ -37,7 +46,11 @@ public class Main2Activity extends AppCompatActivity {
             }
             TextView textView = (TextView) findViewById(R.id.name);
         }
+   }*/
+/*
+    private void loadDetails(Movie movie){
+        movie.setName(movie.getName());
+    }
     */
 
-    }
 }

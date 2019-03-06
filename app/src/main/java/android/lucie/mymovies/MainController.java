@@ -1,6 +1,5 @@
 package android.lucie.mymovies;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -45,12 +44,12 @@ public class MainController {
 
         restMovieApi = retrofit.create(RestMovieApi.class);
 
-        if (hasDataInDataBase()) {
+        //if (hasDataInDataBase()) {
             List<Movie> peopleList = getListFromDataBase();
             activity.showList(peopleList);
-        } else {
+        //} else {
             makeApiCall();
-        }
+        //}
     }
 
     private void makeApiCall() {
