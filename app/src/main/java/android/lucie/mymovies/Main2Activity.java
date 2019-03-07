@@ -19,7 +19,7 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Log.d(TAG, "onCreate: started.");
 
-        //getIncomingIntent();
+        getIncomingIntent();
 
 
         /*
@@ -29,7 +29,7 @@ public class Main2Activity extends AppCompatActivity {
         //loadDetails(movie);
         //showName();
     }
-/*
+
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
 
@@ -46,7 +46,7 @@ public class Main2Activity extends AppCompatActivity {
         TextView name = findViewById(R.id.name);
         name.setText(peopleName);
     }
-    */
+
 
 
 
