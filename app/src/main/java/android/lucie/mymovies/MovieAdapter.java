@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.lucie.mymovies.model.Movie;
 import java.util.List;
-
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,11 +15,8 @@ import android.widget.Toast;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
     private List<Movie> listValues;
-    private Context mContext;
 
     private static final String NAME = "showTextView";
-    private static final String TAG = "RecyclerViewAdapter";
-
 
 
     public class CelluleJava extends RecyclerView.ViewHolder {
@@ -29,6 +24,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         public TextView txtHeader;
         public View layout;
 
+        //Constructeur
         public CelluleJava(View v) {
             super(v);
             layout = v;
@@ -36,16 +32,24 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         }
     }
 
-    public MovieAdapter(List<Movie> listValues, Context context) {
-        this.listValues = listValues;
-        this.mContext = context;
+    public void remove(int position) {
+        listValues.remove(position);
+        notifyItemRemoved(position);
     }
 
+    // Provide a suitable constructor (depends on the kind of dataset)
+    public MovieAdapter(List<Movie> listValues) {
+        this.listValues = listValues;
+    }
+
+    // Create new views (invoked by the layout manager)
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
+        // create a new view
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.row_movie, parent, false);
-        CelluleJava vh = new CelluleJava(v);    // set the view's size, margins, paddings and layout parameters
+        // set the view's size, margins, paddings and layout parameters
+        CelluleJava vh = new CelluleJava(v);
         return vh;
     }
 
@@ -63,23 +67,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on: " + listValues.get(position));
-
-                Toast.makeText(mContext, (CharSequence) listValues.get(position), Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(mContext, Main2Activity.class);
-                intent.putExtra(TAG, (Parcelable) listValues.get(position));
-                mContext.startActivity(intent);
-
-
-
-                /*Log.d(NAME, "onClick: clicked on: " + listValues.get(position));
-
-                Intent intent = new Intent(mContext, Main2Activity.class);
-                TextView showTextView = (TextView) findViewById(R.id.name);
-                String str = showTextView.getText().toString();
-                intent.putExtra(NAME, str);
-                startActivity(intent);*/
+                remove(position);
             }
         });
 
