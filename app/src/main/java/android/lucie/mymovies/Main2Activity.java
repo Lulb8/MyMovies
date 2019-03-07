@@ -4,17 +4,23 @@ import android.content.Intent;
 import android.lucie.mymovies.model.Movie;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
 
+    private static final String TAG = "Main2Activity";
     private static final String NAME = "showTextView";
-    private TextView peopleName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Log.d(TAG, "onCreate: started.");
+
+        //getIncomingIntent();
+
 
         /*
         peopleName = findViewById(R.id.name);
@@ -23,6 +29,28 @@ public class Main2Activity extends AppCompatActivity {
         //loadDetails(movie);
         //showName();
     }
+/*
+    private void getIncomingIntent(){
+        Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
+
+        if(getIntent().hasExtra(NAME)){
+            Log.d(TAG, "getIncomingIntent: found intent extras.");
+            String peopleName = getIntent().getStringExtra(NAME);
+            setName(peopleName);
+        }
+    }
+
+    private void setName(String peopleName){
+        Log.d(TAG, "setImage: setting te image and name to widgets.");
+
+        TextView name = findViewById(R.id.name);
+        name.setText(peopleName);
+    }
+    */
+
+
+
+
 
     /*
     public void showName () {

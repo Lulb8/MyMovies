@@ -1,74 +1,51 @@
 package android.lucie.mymovies;
 
+import android.content.Context;
+import android.content.Intent;
 import android.lucie.mymovies.model.Movie;
-import android.lucie.mymovies.model.Movie;
-
 import java.util.List;
 
-import android.lucie.mymovies.model.Movie;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
     private List<Movie> listValues;
+    private Context mContext;
 
-    public class CelluleJava extends RecyclerView.ViewHolder implements View.OnClickListener{
+    private static final String NAME = "showTextView";
+    private static final String TAG = "RecyclerViewAdapter";
+
+
+
+    public class CelluleJava extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView txtHeader;
-        public TextView txtFooter;
         public View layout;
 
-        //Constructeur
         public CelluleJava(View v) {
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.title);
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            // Get the position of the item that was clicked.
-            int mPosition = getLayoutPosition();
-            // Use that to access the affected item in mWordList.
-            String element = txtHeader.get(mPosition);
-            // Change the word in the mWordList.
-            txtHeader.set(mPosition, "Clicked! " + element);
-            // Notify the adapter, that the data has changed so it can
-            // update the RecyclerView to display the data.
-            txtHeader.notifyDataSetChanged();
         }
     }
 
-    public void add(int position, Movie item) {
-        listValues.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        listValues.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MovieAdapter(List<Movie> listValues) {
+    public MovieAdapter(List<Movie> listValues, Context context) {
         this.listValues = listValues;
+        this.mContext = context;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
-        // create a new view
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.row_movie, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        CelluleJava vh = new CelluleJava(v);
+        CelluleJava vh = new CelluleJava(v);    // set the view's size, margins, paddings and layout parameters
         return vh;
     }
 
@@ -83,10 +60,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         holder.txtHeader.setText(name);
 
         //TODO afficher le detail
-        holder.txtHeader.setOnClickListener(new OnClickListener() {
+        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //remove(position);
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: clicked on: " + listValues.get(position));
+
+                Toast.makeText(mContext, (CharSequence) listValues.get(position), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(mContext, Main2Activity.class);
+                intent.putExtra(TAG, (Parcelable) listValues.get(position));
+                mContext.startActivity(intent);
+
+
+
+                /*Log.d(NAME, "onClick: clicked on: " + listValues.get(position));
+
+                Intent intent = new Intent(mContext, Main2Activity.class);
+                TextView showTextView = (TextView) findViewById(R.id.name);
+                String str = showTextView.getText().toString();
+                intent.putExtra(NAME, str);
+                startActivity(intent);*/
             }
         });
 

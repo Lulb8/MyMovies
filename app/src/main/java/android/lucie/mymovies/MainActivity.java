@@ -1,18 +1,13 @@
 package android.lucie.mymovies;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.lucie.mymovies.model.Movie;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.List;
+
 
 public class MainActivity extends Activity {
 
@@ -22,7 +17,8 @@ public class MainActivity extends Activity {
 
     private MainController controller;
 
-    public static final String NAME = "showTextView";
+    private static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,25 +36,7 @@ public class MainActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new MovieAdapter(input);
+        mAdapter = new MovieAdapter(input, this);
         recyclerView.setAdapter(mAdapter);
-    }
-
-    /*
-    public void onClickDetails (View view) {
-        Intent intent = new Intent(this, Main2Activity.class);
-        TextView showTextView = (TextView) findViewById(R.id.name);
-        String str = showTextView.getText().toString();
-        intent.putExtra(NAME, str);
-        startActivity(intent);
-    }
-    */
-
-    public void displayToast (String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void showToast (View view) {
-        displayToast(getString(R.string.name));
     }
 }
