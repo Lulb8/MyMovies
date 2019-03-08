@@ -1,34 +1,36 @@
 package android.lucie.mymovies;
 
 import android.content.Context;
-import android.content.Intent;
 import android.lucie.mymovies.model.Movie;
 import java.util.List;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
-    private List<Movie> listValues;
 
-    private static final String NAME = "showTextView";
+    private List<Movie> listValues;
+    private final OnItemClickListener listener;
+    private Context context;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(Movie movie);
+    }
+
+    //private static final String NAME = "showTextView";
 
 
     public class CelluleJava extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public TextView txtHeader;
-        public View layout;
+        //public View layout;
 
-        //Constructeur
-        public CelluleJava(View v) {
-            super(v);
-            layout = v;
-            txtHeader = (TextView) v.findViewById(R.id.title);
+        public CelluleJava(View view) {
+            super(view);
+            //layout = view;
+            txtHeader = (TextView) view.findViewById(R.id.title);
         }
     }
 
@@ -37,12 +39,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         notifyItemRemoved(position);
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MovieAdapter(List<Movie> listValues) {
+    public MovieAdapter(List<Movie> listValues, OnItemClickListener listener, Context context) {
         this.listValues = listValues;
+        this.listener = listener;
+        this.context = context;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
@@ -53,27 +55,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(CelluleJava holder, final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        Movie currentMovie = listValues.get(position);
+        final Movie movie = listValues.get(position);
+        final String name = listValues.get(position).getName();
 
-        final String name = currentMovie.getName();   //TODO faire pour les autres
         holder.txtHeader.setText(name);
 
         //TODO afficher le detail
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                remove(position);
+                //remove(position);
+                listener.onItemClick(movie);
             }
         });
-
-        /*
-        final String gender = currentMovie.getGender();
-        holder.txtFooter.setText(gender);*/ //TODO mettre la description
     }
 
 

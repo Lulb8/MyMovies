@@ -19,26 +19,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainController {
 
     private MainActivity activity;
-
     private RestMovieApi restMovieApi;
+
+    static final String BASE_URL = "https://swapi.co/api/";
 
     public MainController(MainActivity mainActivity) {
         this.activity = mainActivity;
     }
 
     public void onStart() {
-
-        //Pour ceux qui veulent aller plus loin
-        //Singleton
-        //Pour ceux qui veulent aller encore plus loin
-        // Injection de dĂ©pendances
-
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://swapi.co/api/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
