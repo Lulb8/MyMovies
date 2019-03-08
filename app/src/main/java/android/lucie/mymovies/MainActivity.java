@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(movie);
-                intent.putExtra("meubleData", json);
+                intent.putExtra(NAME, json);
                 startActivity(intent);
             }
         };
