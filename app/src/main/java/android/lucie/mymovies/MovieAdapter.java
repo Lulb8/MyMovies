@@ -41,7 +41,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.row_movie, parent, false);
+        View v = inflater.inflate(R.layout.row_people, parent, false);
         CelluleJava vh = new CelluleJava(v);
         return vh;
     }

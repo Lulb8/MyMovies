@@ -25,17 +25,26 @@ public class Main2Activity extends AppCompatActivity {
         TextView name = findViewById(R.id.name);
         name.setText(people.getName());
 
+        TextView birthYear = findViewById(R.id.birth_year);
+        birthYear.setText("Birth Year : " + people.getBirthYear());
+
+        TextView eyeColor = findViewById(R.id.eye_color);
+        eyeColor.setText("Eye color : " + people.getEyeColor());
+
         TextView gender = findViewById(R.id.gender);
         gender.setText("Gender : " + people.getGender());
 
         TextView hairColor = findViewById(R.id.hair_color);
         hairColor.setText("Hair color : " + people.getHairColor());
-/*
-        TextView homeworld = findViewById(R.id.homeworld);
-        homeworld.setText("Homeworld : " + people.getHomeworld());
-*/
-        TextView birthYear = findViewById(R.id.birth_year);
-        birthYear.setText("Birth Year : " + people.getBirthYear());
+
+        TextView height = findViewById(R.id.height);
+        height.setText("Hair color : " + people.getHeight());
+
+        TextView mass = findViewById(R.id.mass);
+        mass.setText("Hair color : " + people.getMass());
+
+        TextView skinColor = findViewById(R.id.skin_color);
+        skinColor.setText("Skin color : " + people.getSkinColor());
 
     }
 }
