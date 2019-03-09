@@ -1,8 +1,8 @@
 package android.lucie.mymovies;
 
 import android.lucie.mymovies.model.People;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -36,13 +36,18 @@ public class Main2Activity extends AppCompatActivity {
         hairColor.setText("Hair color : " + people.getHairColor());
 
         TextView height = findViewById(R.id.height);
-        height.setText("Hair color : " + people.getHeight());
+        height.setText("Height : " + people.getHeight() + " cm");
 
         TextView mass = findViewById(R.id.mass);
-        mass.setText("Hair color : " + people.getMass());
+        mass.setText("Mass : " + people.getMass() + " kg");
 
         TextView skinColor = findViewById(R.id.skin_color);
         skinColor.setText("Skin color : " + people.getSkinColor());
+    }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

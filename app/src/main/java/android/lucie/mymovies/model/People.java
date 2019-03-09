@@ -10,6 +10,7 @@ public class People {
     private String mass;
     private String skin_color;
     private String homeworld;
+    private String pictureUrl;
 
     public String getName() {
         return name;
@@ -81,5 +82,13 @@ public class People {
 
     public void setHomeworld(String homeworld) {
         this.homeworld = homeworld;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

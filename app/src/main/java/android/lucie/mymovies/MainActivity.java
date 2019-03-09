@@ -2,6 +2,7 @@ package android.lucie.mymovies;
 
 import android.content.Intent;
 import android.lucie.mymovies.model.People;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.my_recycler_view);
 
+
         controller = new MainController(this);
         controller.onStart();
 
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
                 String json = gson.toJson(people);
                 intent.putExtra(NAME, json);
                 startActivity(intent);
+
+                final MediaPlayer soundNext = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_next);
+                soundNext.start();
+
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         };
     }
