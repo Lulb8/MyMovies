@@ -7,8 +7,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.util.List;
-
 public class Main2Activity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
