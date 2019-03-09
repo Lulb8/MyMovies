@@ -1,7 +1,6 @@
 package android.lucie.mymovies;
 
-import android.content.Intent;
-import android.lucie.mymovies.model.Movie;
+import android.lucie.mymovies.model.People;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -14,8 +13,6 @@ public class Main2Activity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
 
-    private static List<Movie> listValues;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,22 +20,22 @@ public class Main2Activity extends AppCompatActivity {
 
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
-        Movie movie = gson.fromJson(json,Movie.class);
+        People people = gson.fromJson(json, People.class);
 
         TextView name = findViewById(R.id.name);
-        name.setText(movie.getName());
+        name.setText(people.getName());
 
         TextView gender = findViewById(R.id.gender);
-        gender.setText("Gender : " + movie.getGender());
+        gender.setText("Gender : " + people.getGender());
 
         TextView hairColor = findViewById(R.id.hair_color);
-        hairColor.setText("Hair color : " + movie.getHairColor());
+        hairColor.setText("Hair color : " + people.getHairColor());
 /*
         TextView homeworld = findViewById(R.id.homeworld);
-        homeworld.setText("Homeworld : " + movie.getHomeworld());
+        homeworld.setText("Homeworld : " + people.getHomeworld());
 */
         TextView birthYear = findViewById(R.id.birth_year);
-        birthYear.setText("Birth Year : " + movie.getBirthYear());
+        birthYear.setText("Birth Year : " + people.getBirthYear());
 
     }
 }

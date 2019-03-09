@@ -2,12 +2,12 @@ package android.lucie.mymovies.model;
 
 import java.util.List;
 
-public class RestMovieResponse {
+public class RestPeopleResponse {
 
     private int count;
     private String next;
     private String previous;
-    private List<Movie> results;
+    private List<People> results;
 
     public int getCount() {
         return count;
@@ -33,11 +33,11 @@ public class RestMovieResponse {
         this.previous = previous;
     }
 
-    public List<Movie> getResults() {
+    public List<People> getResults() {
         return results;
     }
 
-    public void setResults(List<Movie> results) {
+    public void setResults(List<People> results) {
         this.results = results;
     }
 }

@@ -3,8 +3,8 @@ package android.lucie.mymovies;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import android.lucie.mymovies.model.Movie;
-import android.lucie.mymovies.model.RestMovieResponse;
+import android.lucie.mymovies.model.People;
+import android.lucie.mymovies.model.RestPeopleResponse;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class MainController {
         restMovieApi = retrofit.create(RestMovieApi.class);
 
         //if (hasDataInDataBase()) {
-            List<Movie> peopleList = getListFromDataBase();
+            List<People> peopleList = getListFromDataBase();
             activity.showList(peopleList);
         //} else {
             makeApiCall();
@@ -48,27 +48,27 @@ public class MainController {
     }
 
     private void makeApiCall() {
-        Call<RestMovieResponse> call = restMovieApi.getListMovie();
-        call.enqueue(new Callback<RestMovieResponse>() {
+        Call<RestPeopleResponse> call = restMovieApi.getListPeople();
+        call.enqueue(new Callback<RestPeopleResponse>() {
             @Override
-            public void onResponse(Call<RestMovieResponse> call, Response<RestMovieResponse> response) {
-                RestMovieResponse restMovieResponse = response.body();
-                List<Movie> listMovie = restMovieResponse.getResults();
-                activity.showList(listMovie);
+            public void onResponse(Call<RestPeopleResponse> call, Response<RestPeopleResponse> response) {
+                RestPeopleResponse restMovieResponse = response.body();
+                List<People> listPeople = restMovieResponse.getResults();
+                activity.showList(listPeople);
             }
 
             @Override
-            public void onFailure(Call<RestMovieResponse> call, Throwable t) {
+            public void onFailure(Call<RestPeopleResponse> call, Throwable t) {
                 Log.d("ERROR", "Api Error");
             }
         });
     }
 
-    private void storeData(List<Movie> listMovie) {
+    private void storeData(List<People> listPeople) {
         //TODO
     }
 
-    private List<Movie> getListFromDataBase() {
+    private List<People> getListFromDataBase() {
         //TODO Implement With real logic
         return new ArrayList<>();
     }

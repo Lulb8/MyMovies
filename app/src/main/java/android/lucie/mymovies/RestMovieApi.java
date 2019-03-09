@@ -1,6 +1,6 @@
 package android.lucie.mymovies;
 
-import android.lucie.mymovies.model.RestMovieResponse;
+import android.lucie.mymovies.model.RestPeopleResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ public interface RestMovieApi {
 */
 
     @GET("people")  /*page 1 à 9*/
-    Call<RestMovieResponse> getListMovie();
+    Call<RestPeopleResponse> getListPeople();
 
 }

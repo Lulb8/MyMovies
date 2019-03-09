@@ -1,6 +1,6 @@
 package android.lucie.mymovies.model;
 
-public class Movie {
+public class People {
     private String name;
     private String gender;
     private String homeworld;

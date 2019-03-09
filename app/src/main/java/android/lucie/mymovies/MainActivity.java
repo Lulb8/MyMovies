@@ -1,8 +1,7 @@
 package android.lucie.mymovies;
 
 import android.content.Intent;
-import android.lucie.mymovies.model.Movie;
-import android.app.Activity;
+import android.lucie.mymovies.model.People;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +11,6 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -20,11 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     private MainController controller;
-    private static List<Movie> movieList;
 
     private static final String NAME = "showTextView";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void showList(List<Movie> input){
+    public void showList(List<People> input){
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -48,14 +43,13 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter.OnItemClickListener getListener() {
         return new MovieAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(Movie movie) {
+            public void onItemClick(People people) {
                 Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                 Gson gson = new Gson();
-                String json = gson.toJson(movie);
+                String json = gson.toJson(people);
                 intent.putExtra(NAME, json);
                 startActivity(intent);
             }
         };
-
     }
 }
