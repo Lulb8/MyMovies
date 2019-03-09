@@ -5,5 +5,8 @@
     <color name="colorAccent">#000000</color>
     <color name="row_background">#FFFFFF</color>
     <color name="main_background">#F0F0F0</color>
+    <color name="textView_background">#F0F0F0</color>
+    <color name="background_activityMain2">#F0F0F0</color>
+    <color name="colorAccent_activityMain2">#000000</color>
 
 </resources>

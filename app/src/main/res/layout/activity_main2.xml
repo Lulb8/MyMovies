@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_activityMain2"
     tools:context=".Main2Activity">
 
     <TextView
@@ -15,8 +16,9 @@
         android:layout_marginEnd="8sp"
         android:text="@string/name"
         android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccent_activityMain2"
         android:textSize="25sp"
+        android:background="@color/textView_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,13 +27,14 @@
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56sp"
-        android:layout_marginTop="65sp"
-        android:text="@string/gender"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="65dp"
+        android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/gender"
+        android:textColor="@color/colorAccent_activityMain2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
 
@@ -39,13 +42,14 @@
         android:id="@+id/homeworld"
         android:layout_width="90sp"
         android:layout_height="30sp"
-        android:layout_marginTop="50sp"
-        android:layout_marginEnd="56sp"
-        android:text="@string/homeworld"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/homeworld"
+        android:textColor="@color/colorAccent_activityMain2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/birth_year"
+        app:layout_constraintStart_toStartOf="@+id/birth_year"
         app:layout_constraintTop_toBottomOf="@+id/birth_year" />
 
 
@@ -54,49 +58,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="65sp"
-        android:layout_marginEnd="56sp"
-        android:text="@string/birth_year"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/birth_year"
+        android:textColor="@color/colorAccent_activityMain2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/hair_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="8sp"
-        android:layout_marginBottom="8sp"
+        android:layout_marginTop="50dp"
+        android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/hair_color"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gender"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintEnd_toEndOf="@+id/gender"
+        app:layout_constraintStart_toStartOf="@+id/gender"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
 
 
     <TextView
         android:id="@+id/skin_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48sp"
-        android:layout_marginTop="52sp"
-        android:layout_marginBottom="8sp"
+        android:layout_marginTop="50dp"
+        android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/skin_color"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hair_color"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintEnd_toEndOf="@+id/hair_color"
+        app:layout_constraintStart_toStartOf="@+id/hair_color"
+        app:layout_constraintTop_toBottomOf="@+id/hair_color" />
 
 
     <!--
