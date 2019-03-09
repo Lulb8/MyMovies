@@ -5,7 +5,7 @@ import android.lucie.mymovies.model.RestPeopleResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface RestMovieApi {
+public interface RestPeopleApi {
 
 /*
     @GET("pokemon/?offset=0&limit=964")

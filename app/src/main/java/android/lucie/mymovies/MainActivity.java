@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new MovieAdapter(input, getListener(), this);
+        mAdapter = new PeopleAdapter(input, getListener(), this);
         recyclerView.setAdapter(mAdapter);
     }
 
-    private MovieAdapter.OnItemClickListener getListener() {
-        return new MovieAdapter.OnItemClickListener() {
+    private PeopleAdapter.OnItemClickListener getListener() {
+        return new PeopleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(People people) {
                 Intent intent = new Intent(getApplicationContext(), Main2Activity.class);

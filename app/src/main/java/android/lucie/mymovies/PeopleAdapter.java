@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava> {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJava> {
 
     private List<People> listValues;
     private final OnItemClickListener listener;
@@ -32,7 +32,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         }
     }
 
-    public MovieAdapter(List<People> listValues, OnItemClickListener listener, Context context) {
+    public PeopleAdapter(List<People> listValues, OnItemClickListener listener, Context context) {
         this.listValues = listValues;
         this.listener = listener;
         this.context = context;

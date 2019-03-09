@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainController {
 
     private MainActivity activity;
-    private RestMovieApi restMovieApi;
+    private RestPeopleApi restPeopleApi;
 
     static final String BASE_URL = "https://swapi.co/api/";
 
@@ -37,7 +37,7 @@ public class MainController {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        restMovieApi = retrofit.create(RestMovieApi.class);
+        restPeopleApi = retrofit.create(RestPeopleApi.class);
 
         //if (hasDataInDataBase()) {
             List<People> peopleList = getListFromDataBase();
@@ -48,12 +48,12 @@ public class MainController {
     }
 
     private void makeApiCall() {
-        Call<RestPeopleResponse> call = restMovieApi.getListPeople();
+        Call<RestPeopleResponse> call = restPeopleApi.getListPeople();
         call.enqueue(new Callback<RestPeopleResponse>() {
             @Override
             public void onResponse(Call<RestPeopleResponse> call, Response<RestPeopleResponse> response) {
-                RestPeopleResponse restMovieResponse = response.body();
-                List<People> listPeople = restMovieResponse.getResults();
+                RestPeopleResponse restPeopleResponse = response.body();
+                List<People> listPeople = restPeopleResponse.getResults();
                 activity.showList(listPeople);
             }
 
