@@ -20,8 +20,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         void onItemClick(Movie movie);
     }
 
-    //private static final String NAME = "showTextView";
-
 
     public class CelluleJava extends RecyclerView.ViewHolder {
         public TextView txtHeader;
@@ -55,7 +53,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CelluleJava>
         final String gender = listValues.get(position).getGender();
 
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText(gender);
+        holder.txtFooter.setText("Gender : " + gender);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
