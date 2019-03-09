@@ -1,6 +1,7 @@
 package android.lucie.mymovies;
 
 import android.lucie.mymovies.model.People;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -48,6 +49,8 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
+        final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_previous);
+        soundPrevious.start();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

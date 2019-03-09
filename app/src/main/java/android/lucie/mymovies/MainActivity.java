@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.my_recycler_view);
 
+        final MediaPlayer soundStart = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_on);
+        soundStart.start();
 
         controller = new MainController(this);
         controller.onStart();
-
     }
 
     public void showList(List<People> input){
