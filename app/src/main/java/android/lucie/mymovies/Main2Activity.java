@@ -44,14 +44,17 @@ public class Main2Activity extends AppCompatActivity {
 
         TextView skinColor = findViewById(R.id.skin_color);
         skinColor.setText("Skin color : " + people.getSkinColor());
-    }
 
+        TextView source = findViewById(R.id.linkUrl);
+        source.setText("Source : https://swapi.co/api/people");
+    }
 
     @Override
     public void finish() {
         super.finish();
         final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_previous);
         soundPrevious.start();
+
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

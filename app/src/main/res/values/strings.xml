@@ -12,4 +12,5 @@
     <string name="eye_color">eye_color</string>
     <string name="height">height</string>
     <string name="mass">mass</string>
+    <string name="linkUrl">linkUrl</string>
 </resources>

@@ -6,15 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_activityMain2"
+    android:orientation="vertical"
     tools:context=".Main2Activity">
 
     <TextView
         android:id="@+id/name"
         android:layout_width="300sp"
         android:layout_height="50sp"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="50sp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/name"
@@ -52,9 +53,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/birth_year"
-        app:layout_constraintStart_toStartOf="@+id/birth_year"
-        app:layout_constraintTop_toBottomOf="@+id/birth_year" />
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/height" />
 
     <TextView
         android:id="@+id/gender"
@@ -97,9 +98,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/eye_color"
-        app:layout_constraintStart_toStartOf="@+id/eye_color"
-        app:layout_constraintTop_toBottomOf="@+id/eye_color" />
+        app:layout_constraintEnd_toEndOf="@+id/birth_year"
+        app:layout_constraintStart_toStartOf="@+id/birth_year"
+        app:layout_constraintTop_toBottomOf="@+id/birth_year" />
 
     <TextView
         android:id="@+id/hair_color"
@@ -112,9 +113,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/height"
-        app:layout_constraintStart_toStartOf="@+id/height"
-        app:layout_constraintTop_toBottomOf="@+id/height" />
+        app:layout_constraintEnd_toEndOf="@+id/eye_color"
+        app:layout_constraintStart_toStartOf="@+id/eye_color"
+        app:layout_constraintTop_toBottomOf="@+id/eye_color" />
 
 
     <TextView
@@ -128,8 +129,25 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/mass"
-        app:layout_constraintStart_toStartOf="@+id/mass"
-        app:layout_constraintTop_toBottomOf="@+id/mass" />
+        app:layout_constraintEnd_toEndOf="@+id/hair_color"
+        app:layout_constraintStart_toStartOf="@+id/hair_color"
+        app:layout_constraintTop_toBottomOf="@+id/hair_color" />
+
+    <TextView
+        android:id="@+id/linkUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:autoLink="web"
+        android:background="@color/textView_background"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/linkUrl"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent_activityMain2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/skin_color"
+        app:layout_constraintStart_toStartOf="@+id/skin_color" />
+
 
 </android.support.constraint.ConstraintLayout>
