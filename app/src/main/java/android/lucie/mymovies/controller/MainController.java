@@ -1,6 +1,8 @@
-package android.lucie.mymovies;
+package android.lucie.mymovies.controller;
 
 import android.content.SharedPreferences;
+import android.lucie.mymovies.view.MainActivity;
+import android.lucie.mymovies.model.RestPeopleApi;
 import android.lucie.mymovies.model.People;
 import android.lucie.mymovies.model.RestPeopleResponse;
 import android.util.Log;

@@ -1,13 +1,15 @@
-package android.lucie.mymovies;
+package android.lucie.mymovies.view;
 
 import android.content.Context;
+import android.lucie.mymovies.R;
 import android.lucie.mymovies.model.People;
-import java.util.List;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJava> {
 

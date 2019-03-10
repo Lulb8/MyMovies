@@ -1,5 +1,6 @@
-package android.lucie.mymovies;
+package android.lucie.mymovies.view;
 
+import android.lucie.mymovies.R;
 import android.lucie.mymovies.model.People;
 import android.media.MediaPlayer;
 import android.os.Bundle;
