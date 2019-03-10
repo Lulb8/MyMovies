@@ -61,4 +61,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_previous);
+        soundPrevious.start();
+
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }
