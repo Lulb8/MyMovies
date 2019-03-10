@@ -72,13 +72,13 @@
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
-        android:id="@+id/hair_color"
+        android:id="@+id/mass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/hair_color"
+        android:text="@string/mass"
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
@@ -102,13 +102,13 @@
         app:layout_constraintTop_toBottomOf="@+id/eye_color" />
 
     <TextView
-        android:id="@+id/mass"
+        android:id="@+id/hair_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@color/textView_background"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/mass"
+        android:text="@string/hair_color"
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
@@ -128,20 +128,8 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent_activityMain2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/hair_color"
-        app:layout_constraintStart_toStartOf="@+id/hair_color"
-        app:layout_constraintTop_toBottomOf="@+id/hair_color" />
-
-    <ImageView
-        android:id="@+id/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:color/black" />
+        app:layout_constraintEnd_toEndOf="@+id/mass"
+        app:layout_constraintStart_toStartOf="@+id/mass"
+        app:layout_constraintTop_toBottomOf="@+id/mass" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,11 +1,11 @@
 package android.lucie.mymovies;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import android.lucie.mymovies.model.People;
 import android.lucie.mymovies.model.RestPeopleResponse;
 import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -46,6 +46,7 @@ public class Main2Activity extends AppCompatActivity {
         skinColor.setText("Skin color : " + people.getSkinColor());
     }
 
+
     @Override
     public void finish() {
         super.finish();
