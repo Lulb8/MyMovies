@@ -17,10 +17,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-
     private MainController controller;
 
     private static final String NAME = "showTextView";
+    private static final String PREFS = "PREFS";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         final MediaPlayer soundStart = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_on);
         soundStart.start();
 
-        controller = new MainController(this);
+        controller = new MainController(this, getBaseContext().getSharedPreferences(PREFS,MODE_PRIVATE));
         controller.onStart();
     }
 

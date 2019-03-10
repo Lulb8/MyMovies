@@ -1,13 +1,15 @@
 package android.lucie.mymovies;
 
+import android.content.SharedPreferences;
 import android.lucie.mymovies.model.People;
 import android.lucie.mymovies.model.RestPeopleResponse;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,10 +23,15 @@ public class MainController {
     private MainActivity activity;
     private RestPeopleApi restPeopleApi;
 
+    private final String OBJECT = "OBJECT";
+    private final String NUMBER_OBJECTS = "NUMBER_OBJECTS";
+    SharedPreferences sharedPreferences;
+
     static final String BASE_URL = "https://swapi.co/api/";
 
-    public MainController(MainActivity mainActivity) {
+    public MainController(MainActivity mainActivity, SharedPreferences sharedPreferences) {
         this.activity = mainActivity;
+        this.sharedPreferences = sharedPreferences;
     }
 
     public void onStart() {
@@ -39,12 +46,12 @@ public class MainController {
 
         restPeopleApi = retrofit.create(RestPeopleApi.class);
 
-        //if (hasDataInDataBase()) {
+        if (hasDataInDataBase()) {
             List<People> peopleList = getListFromDataBase();
             activity.showList(peopleList);
-        //} else {
+        } else {
             makeApiCall();
-        //}
+        }
     }
 
     private void makeApiCall() {
@@ -54,6 +61,8 @@ public class MainController {
             public void onResponse(Call<RestPeopleResponse> call, Response<RestPeopleResponse> response) {
                 RestPeopleResponse restPeopleResponse = response.body();
                 List<People> listPeople = restPeopleResponse.getResults();
+                storeData(listPeople);
+
                 activity.showList(listPeople);
             }
 
@@ -65,18 +74,22 @@ public class MainController {
     }
 
     private void storeData(List<People> listPeople) {
-        //TODO
+        Gson gson = new Gson();
+        String json = gson.toJson(listPeople);
+        sharedPreferences
+                .edit().putString(OBJECT,json)
+                .putInt(NUMBER_OBJECTS,listPeople.size())
+                .apply();
     }
 
     private List<People> getListFromDataBase() {
-        //TODO Implement With real logic
-        return new ArrayList<>();
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(OBJECT,null);
+        Type type = new TypeToken<List<People>>() {}.getType();
+        return gson.fromJson(json, type);
     }
 
     private boolean hasDataInDataBase() {
-        //TODO Implement With real logic
-        return true;
+        return sharedPreferences.contains(NUMBER_OBJECTS);
     }
-
-
 }
