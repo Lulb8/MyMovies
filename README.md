@@ -15,10 +15,10 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 - Stockage des données en cache
 
 - Fonctions supplémentaires :
--- Ajout d'une architecture MVC
--- Splash screen durant le chargement des données de l'API avec une barre de chargement
--- Ajout de bruitage de sabres lazers entre les écrans
--- Ajout d'animations pour faire la transition entre les écrans
+  - Ajout d'une architecture MVC
+  - Splash screen durant le chargement des données de l'API avec une barre de chargement
+  - Ajout de bruitage de sabres lazers entre les écrans
+  - Ajout d'animations pour faire la transition entre les écrans
 
 ## Fonctionnalités:
 
