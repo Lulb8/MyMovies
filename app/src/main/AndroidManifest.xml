@@ -26,6 +26,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".view.Main2Activity"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="8b34ccf8c1415f0de35c9af2d7eb211f1a377fbd" />
 
     </application>
 
