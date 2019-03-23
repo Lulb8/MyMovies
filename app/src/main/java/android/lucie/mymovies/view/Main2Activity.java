@@ -83,7 +83,7 @@ public class Main2Activity extends AppCompatActivity {
                     public void run() {
                         darth_vader.animate().alpha(0f).setDuration(600);
                     }
-                }, 9243);
+                }, 9100);
             }
         });
     }
