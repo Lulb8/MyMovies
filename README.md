@@ -16,18 +16,22 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 
 - Fonctions supplémentaires :
   - Ajout d'une architecture MVC
-  - Splash screen durant le chargement des données de l'API avec une barre de chargement
+  - Splash screen au lancement de l'application
   - Ajout de bruitage de sabres lazers entre les écrans
   - Ajout d'animations pour faire la transition entre les écrans
 
 ## Fonctionnalités:
 
 ### Premier écran
-- Splash Screen affichant le logo de Star Wars et une barre de chargement
+- Splash Screen affichant le logo de Star Wars
+![Star Wars Splash Screen](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339035.png)
 
 ### Ecran de la liste
 - Affiche la liste des personnages de Star Wars
+![Character list](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339042.png)
 
 ### Ecran du détail du personnage
 - Affiche les différentes informations sur le personnage
 - Lien de redirection vers l'API 
+![Character details](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339047.png)
+
