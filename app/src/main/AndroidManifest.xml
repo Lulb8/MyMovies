@@ -30,6 +30,16 @@
             android:name="io.fabric.ApiKey"
             android:value="8b34ccf8c1415f0de35c9af2d7eb211f1a377fbd" />
 
+        <service android:name=".controller.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
     </application>
+
 
 </manifest>

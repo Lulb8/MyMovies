@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "28211228526",
+    "firebase_url": "https://mymovies-acdf0.firebaseio.com",
+    "project_id": "mymovies-acdf0",
+    "storage_bucket": "mymovies-acdf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28211228526:android:98efe93a7ff3eb69",
+        "android_client_info": {
+          "package_name": "android.lucie.mymovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28211228526-11ivn117t1lm5cmtj7ov6ejvbhlr6fpi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.lucie.mymovies",
+            "certificate_hash": "3afe263277078318113c31406bfff9bc62686c03"
+          }
+        },
+        {
+          "client_id": "28211228526-kldjkj3dk7issprhnrc568p1qqrs4slu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO33YQfqafFcB1dCeIz0teGYomPVEk7Fk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28211228526-kldjkj3dk7issprhnrc568p1qqrs4slu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
