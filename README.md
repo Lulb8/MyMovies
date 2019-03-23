@@ -24,14 +24,13 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 
 ### Premier écran
 - Splash Screen affichant le logo de Star Wars
-![Star Wars Splash Screen](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339035.png)
+<img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339035.png" width="300" />
 
 ### Ecran de la liste
 - Affiche la liste des personnages de Star Wars
-![Character list](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339042.png)
+<img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339042.png" width="300" />
 
 ### Ecran du détail du personnage
 - Affiche les différentes informations sur le personnage
 - Lien de redirection vers l'API 
-![Character details](https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339047.png)
-
+<img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339047.png" width="300" />
