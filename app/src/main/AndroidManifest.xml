@@ -28,7 +28,7 @@
             android:screenOrientation="portrait" />
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="8b34ccf8c1415f0de35c9af2d7eb211f1a377fbd" />
+            android:value="@string/api_key" />
 
         <service android:name=".controller.FirebaseMessagingService">
             <intent-filter>
