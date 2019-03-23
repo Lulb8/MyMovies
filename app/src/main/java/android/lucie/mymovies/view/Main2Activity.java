@@ -1,10 +1,16 @@
 package android.lucie.mymovies.view;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.lucie.mymovies.R;
+import android.lucie.mymovies.controller.ShakeDetector;
 import android.lucie.mymovies.model.People;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -12,6 +18,10 @@ import com.google.gson.Gson;
 public class Main2Activity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
+
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,48 @@ public class Main2Activity extends AppCompatActivity {
 
         TextView source = findViewById(R.id.linkUrl);
         source.setText("Source : https://swapi.co/api/people");
+
+        shakePhone();
+    }
+
+    public void shakePhone(){
+        // ShakeDetector initialization
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager
+                .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector = new ShakeDetector();
+        mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
+
+            @Override
+            public void onShake(int count) {
+                final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
+                soundPrevious.start();
+
+                final ImageView darth_vader = findViewById(R.id.darth_vader);
+                darth_vader.animate().alpha(1f).setDuration(600);
+                darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        darth_vader.animate().alpha(0f).setDuration(600);
+                    }
+                }, 9243);
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Add the following line to register the Session Manager Listener onResume
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    public void onPause() {
+        // Add the following line to unregister the Sensor Manager onPause
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
     }
 
     @Override

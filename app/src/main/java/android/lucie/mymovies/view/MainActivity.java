@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new MainController(this, getBaseContext().getSharedPreferences(PREFS,MODE_PRIVATE));
         controller.onStart();
+
     }
 
     public void showList(List<People> input){
