@@ -15,10 +15,14 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 - Stockage des données en cache
 
 - Fonctions supplémentaires :
+  - Ajout d'une icône
   - Ajout d'une architecture MVC
   - Splash screen au lancement de l'application
   - Ajout de bruitage de sabres lazers entre les écrans
   - Ajout d'animations pour faire la transition entre les écrans
+  - Ajout des notifications Push
+  - Ajout de Crashlytics
+  - Affichage d'une image et lancement d'une musique si le téléphone est secoué
 
 ## Fonctionnalités:
 
@@ -34,3 +38,11 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 - Affiche les différentes informations sur le personnage
 - Lien de redirection vers l'API 
 <img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553339047.png" width="300" />
+
+### Notifications
+<img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_1553371105.png" width="300" />
+
+### Quand le téléphone est secoué
+- Affiche le masque de Dark Vador
+- Lance la musique de la Marche Impériale
+<img src="" width="300" />
