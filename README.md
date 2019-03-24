@@ -45,4 +45,4 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 ### Quand le téléphone est secoué
 - Affiche le masque de Dark Vador
 - Lance la musique de la Marche Impériale
-<img src="" width="300" />
+<img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_20190324-115855_Star%20Wars.jpg" width="300" />
