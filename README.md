@@ -15,7 +15,7 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 - Stockage des données en cache
 
 - Fonctions supplémentaires :
-  - Ajout d'une icône
+  - Ajout d'une icône <img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_20190324-120131_Icone.jpg" width="50" />
   - Ajout d'une architecture MVC
   - Splash screen au lancement de l'application
   - Ajout de bruitage de sabres lazers entre les écrans
