@@ -11,14 +11,14 @@ Cette application affiche la liste et le détail des personnages de Star Wars. E
 - Deux écrans : Un écran avec une liste et un écran avec un détail de l’item
 - Affichage d'une liste dans une RecyclerView
 - Affichage du détail d'un personnage de la liste
-- Appel WebService à une API Rest
+- Appel WebService à une API Rest : https://swapi.co/
 - Stockage des données en cache
 
 - Fonctions supplémentaires :
   - Ajout d'une icône <img src="https://github.com/Lulb8/MyMovies/blob/master/Screenshot/Screenshot_20190324-120131_Icone.jpg" width="50" />
   - Ajout d'une architecture MVC
   - Splash screen au lancement de l'application
-  - Ajout de bruitage de sabres lazers entre les écrans
+  - Ajout de bruitages de sabres lazers entre les écrans
   - Ajout d'animations pour faire la transition entre les écrans
   - Ajout des notifications Push
   - Ajout de Crashlytics
