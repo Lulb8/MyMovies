@@ -1,5 +1,7 @@
 package android.lucie.mymovies.model;
 
+import android.widget.TextView;
+
 public class People {
     private String name;
     private String birth_year;
@@ -10,7 +12,10 @@ public class People {
     private String mass;
     private String skin_color;
     private String homeworld;
+    private String image_icon;
+    private String image_detail;
     private String url;
+
 
     public String getName() {
         return name;
@@ -90,5 +95,21 @@ public class People {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getImageIcon() {
+        return image_icon;
+    }
+
+    public void setImageIcon(String image_icon) {
+        this.image_icon = image_icon;
+    }
+
+    public String getImageDetail() {
+        return image_detail;
+    }
+
+    public void setImageDetail(String image_detail) {
+        this.image_detail = image_detail;
     }
 }

@@ -13,7 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -31,6 +33,20 @@ public class Main2Activity extends AppCompatActivity {
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
         People people = gson.fromJson(json, People.class);
+
+        ImageView imageDetail = findViewById(R.id.imageDetail);
+        String image = people.getImageDetail();
+
+        /*Picasso.with(this)
+                .load(image)
+                .error(R.drawable.error_icon)
+                .into(imageView);
+        */
+        Glide.with(this)
+                .load(image)
+                .fitCenter()
+                .error(R.drawable.error_icon)
+                .into(imageDetail);
 
         TextView name = findViewById(R.id.name);
         name.setText(people.getName());

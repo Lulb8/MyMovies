@@ -7,7 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -26,11 +30,13 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
     public class CelluleJava extends RecyclerView.ViewHolder {
         public TextView txtHeader;
         public TextView txtFooter;
+        public ImageView imgIcon;
 
         public CelluleJava(View view) {
             super(view);
             txtHeader = (TextView) view.findViewById(R.id.title);
             txtFooter = (TextView) view.findViewById(R.id.gender);
+            imgIcon = (ImageView) view.findViewById(R.id.imageIcon);
         }
     }
 
@@ -53,9 +59,25 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
         final People people = listValues.get(position);
         final String name = listValues.get(position).getName();
         final String gender = listValues.get(position).getGender();
+        final String image_icon = listValues.get(position).getImageIcon();
+        System.out.println("url = " + image_icon);
 
         holder.txtHeader.setText(name);
         holder.txtFooter.setText("Gender : " + gender);
+
+        /*
+        Picasso.with(context)
+                .load(image_icon)
+                .error(R.drawable.error_icon)
+                .into(holder.imgIcon);
+        */
+
+        Glide.with(context)
+                .load(image_icon)
+                .error(R.drawable.error_icon)
+                .fitCenter()
+                .into(holder.imgIcon);
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +85,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
                 listener.onItemClick(people);
             }
         });
+
     }
 
     @Override

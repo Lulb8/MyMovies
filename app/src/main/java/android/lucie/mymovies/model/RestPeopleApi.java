@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 
 public interface RestPeopleApi {
 
-    @GET("people")
+    @GET("people.json")
     Call<RestPeopleResponse> getListPeople();
 
 }

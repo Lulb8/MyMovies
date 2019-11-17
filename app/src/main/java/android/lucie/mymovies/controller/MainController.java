@@ -29,7 +29,7 @@ public class MainController {
     private final String NUMBER_OBJECTS = "NUMBER_OBJECTS";
     SharedPreferences sharedPreferences;
 
-    static final String BASE_URL = "https://swapi.co/api/";
+    static final String BASE_URL = "https://raw.githubusercontent.com/Lulb8/Apis/master/SWAPI/";
 
     public MainController(MainActivity mainActivity, SharedPreferences sharedPreferences) {
         this.activity = mainActivity;
